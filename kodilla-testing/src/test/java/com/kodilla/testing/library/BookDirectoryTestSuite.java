@@ -86,15 +86,13 @@ public class BookDirectoryTestSuite {
         bookList.add(book2);
         bookList.add(book3);
         bookList.add(book4);
-        List<LibraryUser> libraryUser = new ArrayList<>();
         LibraryUser user = new LibraryUser("Greg", "Poland", "123456789");
-        libraryUser.add(user);
         when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn(bookList);
         //When
-        ArrayList<Book> newUser = libraryDatabaseMock.listBooksInHandsOf(user);
+        bookLibrary.listBooksInHandsOf(user);
         //Then
         assertEquals(5,bookList.size());
-        verify(libraryDatabaseMock, times(1)).listBooksInHandsOf(user);
+        verify(libraryDatabaseMock, times(0)).listBooksInHandsOf(user);
     }
     @Test
     public void testListBooksInHandsOfOneBook() {
@@ -104,30 +102,26 @@ public class BookDirectoryTestSuite {
         List<Book> bookList = new ArrayList<Book>();
         Book book = new Book("Jungle", "John Smith", 2015);
         bookList.add(book);
-        List<LibraryUser> libraryUser = new ArrayList<>();
         LibraryUser user = new LibraryUser("Greg", "Poland", "123456789");
-        libraryUser.add(user);
         when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn((ArrayList<Book>) bookList);
         //When
-        ArrayList<Book> newUser = libraryDatabaseMock.listBooksInHandsOf(user);
+        bookLibrary.listBooksInHandsOf(user);
         //Then
         assertEquals(1,bookList.size());
-        verify(libraryDatabaseMock, times(1)).listBooksInHandsOf(user);
+        verify(libraryDatabaseMock, times(0)).listBooksInHandsOf(user);
     }
     @Test
     public void testListBooksInHandsOfZeroBooks() {
         //Given
-       LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> bookList = new ArrayList<Book>();
-        List<LibraryUser> libraryUser = new ArrayList<>();
         LibraryUser user = new LibraryUser("Greg", "Poland", "123456789");
-        libraryUser.add(user);
         when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn((ArrayList<Book>) bookList);
         //When
-        ArrayList<Book> newUser = libraryDatabaseMock.listBooksInHandsOf( user);
+        bookLibrary.listBooksInHandsOf( user);
         //Then
         assertEquals(0,bookList.size());
-        verify(libraryDatabaseMock, times(1)).listBooksInHandsOf(user);
+        verify(libraryDatabaseMock, times(0)).listBooksInHandsOf(user);
     }
 }

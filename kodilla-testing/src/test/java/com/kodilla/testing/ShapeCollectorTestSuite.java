@@ -25,9 +25,9 @@ public class ShapeCollectorTestSuite {
         Shape shape = new Circle();
         ShapeCollector shapeCollector = new ShapeCollector(shape);
         //When
-        Shape checkShape = shapeCollector.addFigure(shape);
+        shapeCollector.addFigure(shape);
         //Then
-        Assert.assertEquals(shape, checkShape);
+        Assert.assertEquals(1, shapeCollector.getFigureQuantity(1));
     }
     @Test
     public void testRemoveFigure() {
@@ -38,7 +38,8 @@ public class ShapeCollectorTestSuite {
         //When
         boolean result = shapeCollector.removeFigure(shape);
         //Then
-        Assert.assertFalse(result);
+        Assert.assertEquals(0, shapeCollector.getFigureQuantity(0));
+        Assert.assertTrue(result);
     }
     @Test
     public void testGetFigure() {

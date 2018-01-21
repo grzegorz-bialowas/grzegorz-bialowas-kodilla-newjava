@@ -24,17 +24,17 @@ public class ForumTestStatistics {
             System.out.println("Test Suite: end");
         }
     @Test
-        public void testCalculateUsersQuantity() {
-            //Given
-            Statistics statisticsMock = mock(Statistics.class);
-            List<String> usersList = new ArrayList<>();
-            when(statisticsMock.usersNames()).thenReturn(usersList);
-            ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
-            //When
-            int users = statisticsMock.usersNames().size();
-            //Then
-            Assert.assertEquals(0, users);
-        }
+    public void testCalculateUsersQuantity() {
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        List<String> usersList = new ArrayList<>();
+        when(statisticsMock.usersNames()).thenReturn(usersList);
+        ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+        //When
+        int users = statisticsMock.usersNames().size();
+        //Then
+        Assert.assertEquals(0, users);
+    }
     @Test
     public void testCalculateUsersQuantityWith100() {
         //Given

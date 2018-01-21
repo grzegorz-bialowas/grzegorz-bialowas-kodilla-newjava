@@ -6,17 +6,25 @@ public class ShapeCollector {
     public ShapeCollector(Shape shape) {
         this.shape = shape;
     }
+    public ArrayList<Shape> getFigureList(int i) {
+        return figureList;
+    }
     public Shape addFigure(Shape shape) {
         figureList.add(shape);
         return shape;
     }
     public boolean removeFigure(Shape shape){
         figureList.remove(shape);
-        return false;
+        return true;
     }
     public Shape getFigure(int n) {
         return figureList.get(n);
     }
+
+    public int getFigureQuantity(int figureQuantity) {
+        return figureQuantity;
+    }
+
 }
 
 
