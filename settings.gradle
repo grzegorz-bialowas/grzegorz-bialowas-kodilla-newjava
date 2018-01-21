@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 include 'kodilla-testing'
 include 'kodilla-stream'
+=======
+include 'kodilla-testing2'
+>>>>>>> 577c83ce9611b31f38c7573ec2933a87908c7fe7
 
