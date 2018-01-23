@@ -30,10 +30,11 @@ public class ForumTestStatistics {
             List<String> usersList = new ArrayList<>();
             when(statisticsMock.usersNames()).thenReturn(usersList);
             ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+            forumStatistics.calculateAdvStatistics(statisticsMock);
             //When
-            int users = statisticsMock.usersNames().size();
+            int users = forumStatistics.getUserCount();
             //Then
-            Assert.assertEquals(0, users);
+            Assert.assertEquals(0, users );
         }
     @Test
     public void testCalculateUsersQuantityWith100() {
@@ -44,8 +45,9 @@ public class ForumTestStatistics {
             usersList.add("Users" + i);
         when(statisticsMock.usersNames()).thenReturn(usersList);
         ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+        forumStatistics.calculateAdvStatistics(statisticsMock);
         //When
-        int users = statisticsMock.usersNames().size();
+       int users = forumStatistics.getUserCount();
         //Then
         Assert.assertEquals(100, users);
     }
@@ -55,8 +57,9 @@ public class ForumTestStatistics {
             Statistics statisticsMock = mock(Statistics.class);
             when(statisticsMock.postsCount()).thenReturn(0);
             ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+            forumStatistics.calculateAdvStatistics(statisticsMock);
             //When
-            int posts = statisticsMock.postsCount();
+            int posts = forumStatistics.getPostCount();
             //Then
             Assert.assertEquals(0, posts);
         }
@@ -66,8 +69,9 @@ public class ForumTestStatistics {
         Statistics statisticsMock = mock(Statistics.class);
         when(statisticsMock.postsCount()).thenReturn(1000);
         ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+        forumStatistics.calculateAdvStatistics(statisticsMock);
         //When
-        int posts = statisticsMock.postsCount();
+        int posts = forumStatistics.getPostCount();
         //Then
         Assert.assertEquals(1000, posts);
     }
@@ -77,8 +81,9 @@ public class ForumTestStatistics {
         Statistics statisticsMock = mock(Statistics.class);
         when(statisticsMock.commentsCount()).thenReturn(0);
         ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+        forumStatistics.calculateAdvStatistics(statisticsMock);
         //When
-        int comments = statisticsMock.commentsCount();
+        int comments = forumStatistics.getCommentsCount();
         //Then
         Assert.assertEquals(0, comments);
     }
@@ -89,9 +94,10 @@ public class ForumTestStatistics {
         when(statisticsMock.commentsCount()).thenReturn(1000);
         when(statisticsMock.postsCount()).thenReturn(100);
         ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+        forumStatistics.calculateAdvStatistics(statisticsMock);
         //When
-        int comments = statisticsMock.commentsCount();
-        int posts = statisticsMock.postsCount();
+        int comments = forumStatistics.getCommentsCount();
+        int posts = forumStatistics.getPostCount();
         //Then
         Assert.assertEquals(1000, comments);
         Assert.assertEquals(100, posts);
@@ -103,13 +109,13 @@ public class ForumTestStatistics {
         when(statisticsMock.postsCount()).thenReturn(1000);
         when(statisticsMock.commentsCount()).thenReturn(100);
         ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+        forumStatistics.calculateAdvStatistics(statisticsMock);
         //When
-        int posts = statisticsMock.postsCount();
-        int comments = statisticsMock.commentsCount();
+        int posts = forumStatistics.getPostCount();
+        int comments = forumStatistics.getCommentsCount();
         //Then
         Assert.assertEquals(1000, posts);
         Assert.assertEquals(100, comments);
-
     }
 }
 

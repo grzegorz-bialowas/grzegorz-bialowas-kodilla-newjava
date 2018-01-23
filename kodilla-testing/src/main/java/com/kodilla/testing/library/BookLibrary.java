@@ -1,7 +1,6 @@
 package com.kodilla.testing.library;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class BookLibrary {
@@ -18,7 +17,7 @@ public class BookLibrary {
         bookList = resultList;
         return bookList;
     }
-    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+    public ArrayList<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         return null;
     }
 }
