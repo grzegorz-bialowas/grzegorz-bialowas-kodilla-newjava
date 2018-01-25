@@ -6,9 +6,6 @@ public class ShapeCollector {
     public ShapeCollector(Shape shape) {
         this.shape = shape;
     }
-    public ArrayList<Shape> getFigureList(int i) {
-        return figureList;
-    }
     public Shape addFigure(Shape shape) {
         figureList.add(shape);
         return shape;
