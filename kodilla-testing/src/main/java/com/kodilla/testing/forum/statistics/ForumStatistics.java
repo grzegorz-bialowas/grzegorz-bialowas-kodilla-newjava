@@ -34,7 +34,7 @@ public class ForumStatistics {
         return averagePostCommentsPerPostCount;
     }
 
-    public int calculateAdvStatistics(Statistics statistics) {
+    public void calculateAdvStatistics(Statistics statistics) {
         userCount = statistics.usersNames().size();
         postCount = statistics.postsCount();
         commentsCount = statistics.commentsCount();
@@ -45,6 +45,6 @@ public class ForumStatistics {
         if (postCount > 0) {
             averagePostCommentsPerPostCount = (double) commentsCount / postCount;
         }
-        return 0;
+
     }
 }
