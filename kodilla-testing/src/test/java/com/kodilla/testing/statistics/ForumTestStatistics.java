@@ -38,9 +38,9 @@ public class ForumTestStatistics {
             int users = forumStatistics.getUserCount();
             int posts = forumStatistics.getPostCount();
             int comments = forumStatistics.getCommentsCount();
-            double avgUsersPost = forumStatistics.getCommentsCount();
-            double avgUsersComents = forumStatistics.getCommentsCount();
-            double avgCommentsPosts = forumStatistics.getCommentsCount();
+            double avgUsersPost = forumStatistics.getAveragePostCountPerUser();
+            double avgUsersComents = forumStatistics.getAverageCommentsCountPerUser();
+            double avgCommentsPosts = forumStatistics.getAveragePostCommentsPerPostCount();
             //Then
             Assert.assertEquals(0, users);
             Assert.assertEquals(0, posts);

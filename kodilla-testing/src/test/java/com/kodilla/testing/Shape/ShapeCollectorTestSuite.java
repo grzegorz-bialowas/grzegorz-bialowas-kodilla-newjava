@@ -1,4 +1,4 @@
-package com.kodilla.testing;
+package com.kodilla.testing.Shape;
 import com.kodilla.testing.shape.Circle;
 import com.kodilla.testing.shape.Shape;
 import com.kodilla.testing.shape.ShapeCollector;
@@ -46,10 +46,10 @@ public class ShapeCollectorTestSuite {
         //Given
         Shape shape = new Circle();
         ShapeCollector shapeCollector = new ShapeCollector();
-        Shape checkShape = shapeCollector.addFigure(shape);
+        shapeCollector.addFigure(shape);
         //When
         shapeCollector.getFigure(0);
         //Then
-        Assert.assertEquals(checkShape, shapeCollector.getFigure(0));
+        Assert.assertEquals(shape, shapeCollector.getFigure(0));
     }
 }
