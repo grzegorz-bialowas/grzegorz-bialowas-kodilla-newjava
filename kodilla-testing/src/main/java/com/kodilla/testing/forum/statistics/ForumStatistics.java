@@ -40,8 +40,8 @@ public class ForumStatistics {
         commentsCount = statistics.commentsCount();
         if (userCount > 0) {
             averagePostCountPerUser = (double) postCount / userCount;
+            averageCommentsCountPerUser = (double) commentsCount / userCount;
         }
-        averageCommentsCountPerUser = (double) commentsCount / userCount;
         if (postCount > 0) {
             averagePostCommentsPerPostCount = (double) commentsCount / postCount;
         }

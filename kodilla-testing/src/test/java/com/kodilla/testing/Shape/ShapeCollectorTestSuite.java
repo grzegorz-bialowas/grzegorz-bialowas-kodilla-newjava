@@ -48,8 +48,8 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(shape);
         //When
-        shapeCollector.getFigure(0);
+        Shape checkShape = shapeCollector.getFigure(0);
         //Then
-        Assert.assertEquals(shape, shapeCollector.getFigure(0));
+        Assert.assertEquals(checkShape, shapeCollector.getFigure(0));
     }
 }
