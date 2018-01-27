@@ -50,6 +50,6 @@ public class ShapeCollectorTestSuite {
         //When
         Shape checkShape = shapeCollector.getFigure(0);
         //Then
-        Assert.assertEquals(checkShape, shapeCollector.getFigure(0));
+        Assert.assertEquals(checkShape, shape);
     }
 }

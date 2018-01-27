@@ -1,65 +1,43 @@
 package com.kodilla.stream.world;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public final class Continent {
-    BigDecimal bigDecimal;
-    List<Country> europeList;
-    BigDecimal Poland = new BigDecimal(20000000);
-    BigDecimal Russia = new BigDecimal(20000000);
-    BigDecimal Spain = new BigDecimal(20000000);
-    BigDecimal England = new BigDecimal(20000000);
-    BigDecimal France = new BigDecimal(20000000);
-    BigDecimal China = new BigDecimal(80000000);
-    BigDecimal Japan = new BigDecimal(20000000);
-    BigDecimal Indie = new BigDecimal(50000000);
-    BigDecimal Egypt = new BigDecimal(50000000);
-    BigDecimal Libya = new BigDecimal(50000000);
-    BigDecimal Nigeria = new BigDecimal(50000000);
+    String continent;
+    List<Country> countries;
 
-    public Continent(List<Country> countryList) {
+    public Continent(String continent, List<Country> countries) {
+        this.continent = continent;
+        this.countries = countries;
     }
 
-    BigDecimal EuropeQuantity() {
-            List<Country> europeList = new ArrayList<>(100000000);
-            europeList.add(new Country(Poland));
-            europeList.add(new Country(Russia));
-            europeList.add(new Country(Spain));
-            europeList.add(new Country(England));
-            europeList.add(new Country(France));
-            BigDecimal totalEurope = BigDecimal.ZERO;
-                for (Country europe : europeList) {
-                    totalEurope = totalEurope.add(europe.getPeopleQuantity());
-                }
-                return totalEurope;
-        }
-        BigDecimal AsiaQuantity() {
-            List<Country> asiaList = new ArrayList<>(1500000000);
-            asiaList.add(new Country(China));
-            asiaList.add(new Country(Japan));
-            asiaList.add(new Country(Indie));
-            BigDecimal totalAsia = BigDecimal.ZERO;
-                for (Country asia : asiaList) {
-                    totalAsia = totalAsia.add(asia.getPeopleQuantity());
-                }
-                return totalAsia;
-            }
-    private List<Country> asiaList() {
-        return asiaList();
+    public String getContinent() {
+        return continent;
     }
 
+    public List<Country> getCountries() {
+        return countries;
+    }
 
-    BigDecimal AfricaQuantity() {
-            List<Country> africaList = new ArrayList<>(150000000);
-            africaList.add(new Country(Egypt));
-            africaList.add(new Country(Libya));
-            africaList.add(new Country(Nigeria));
-            BigDecimal totalAfrica = BigDecimal.ZERO;
-                for (Country africa : africaList) {
-                    totalAfrica = totalAfrica.add(africa.getPeopleQuantity());
-                }
-                return totalAfrica;
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Continent)) return false;
+        Continent continent1 = (Continent) o;
+        return Objects.equals(getContinent(), continent1.getContinent());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getContinent());
+    }
+
+    @Override
+    public String toString() {
+        return "Continent{" +
+                "continent='" + continent + '\'' +
+                '}';
+    }
 }

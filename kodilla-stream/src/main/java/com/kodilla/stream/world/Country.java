@@ -1,26 +1,36 @@
 package com.kodilla.stream.world;
-
 import java.math.BigDecimal;
-
+import java.util.Objects;
 public final class Country {
-    public Country(BigDecimal poland) {
-
+    String country;
+    BigDecimal peopleQuantity;
+    public Country(final String country, final BigDecimal peopleQuantity) {
+        this.country = country;
+        this.peopleQuantity = peopleQuantity;
     }
-    //  public Country(BigDecimal bigDecimal) {
-  //  }
 
-    // BigDecimal Poland = new BigDecimal(1000000);
-   // BigDecimal Russia = new BigDecimal(45000000);
-   // BigDecimal Spain = new BigDecimal(2500000);
-   // BigDecimal England = new BigDecimal(5000000);
-   // BigDecimal France = new BigDecimal(7500000);
-   // BigDecimal China = new BigDecimal(850000000);
-   // BigDecimal Japan = new BigDecimal(65000000);
-   // BigDecimal Indie = new BigDecimal(850000000);
-   // BigDecimal Egypt = new BigDecimal(50000000);
-   // BigDecimal Libya = new BigDecimal(65000000);
-   // BigDecimal Nigeria = new BigDecimal(7500000);
-    BigDecimal getPeopleQuantity() {
-        return null;
+    public String getCountry() {
+        return country;
+    }
+    public BigDecimal getPeopleQuantity() {
+        return peopleQuantity;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Country)) return false;
+        Country country = (Country) o;
+        return Objects.equals(getCountry(), country.getCountry());
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCountry());
+    }
+    @Override
+    public String toString() {
+        return "Country{" +
+                "countryName='" + country + '\'' +
+                ", peopleQuantity=" + peopleQuantity +
+                '}';
     }
 }
