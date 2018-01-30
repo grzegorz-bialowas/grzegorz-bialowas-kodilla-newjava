@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Objects;
 
 public final class Continent {
-    String continent;
-    List<Country> countries;
+    private String continent;
+    private List<Country> countries;
 
     public Continent(String continent, List<Country> countries) {
         this.continent = continent;
