@@ -1,5 +1,4 @@
-package com.kodilla.stream.world.array;
-import com.kodilla.stream.array.ArrayOperations;
+package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 public class ArrayOperationsTestSuite {
