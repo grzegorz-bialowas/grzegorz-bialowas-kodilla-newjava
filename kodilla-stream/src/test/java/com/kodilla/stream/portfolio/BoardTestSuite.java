@@ -144,9 +144,12 @@ public class BoardTestSuite {
         double longTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToDouble(n->ChronoUnit.DAYS.between(n.getCreated(), n.getCreated()))
+                .mapToDouble(n->ChronoUnit.DAYS.between(n.getCreated(), LocalDate.now()))
                 .average()
                 .getAsDouble();
+        //Then
+        Assert.assertEquals(10,longTasks,0.1);
+
 
 
     }
