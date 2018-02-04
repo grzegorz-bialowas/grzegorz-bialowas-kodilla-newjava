@@ -23,9 +23,9 @@ public class FlightFinder {
     public static void main(String args[]) {
         FlightFinder flightFinder = new FlightFinder();
         try {
-            flightFinder.findFlight(new Flight("Warsaw", "Krakow"));
+            flightFinder.findFlight(new Flight("Opole", "Krakow"));
         } catch (RouteNotFoundException e) {
-            System.out.println("Your airport is not on flight schedule" + e);
+            System.out.println("Error. Wrong airport." + e);
         }
     }
 }
