@@ -14,6 +14,8 @@ public class FirstChallenge {
             System.out.println(result);
         } catch (ArithmeticException e) {
             System.out.println("You can't divide by 0." + e);
+        } finally {
+            System.out.println("You can do your maths on your own, if You want to.");
         }
     }
 }
