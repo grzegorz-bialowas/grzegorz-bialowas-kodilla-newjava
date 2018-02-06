@@ -13,7 +13,7 @@ public class FlightFinder {
          flightMap.put("Turawa", false);
         String destination = flight.getArrivalAirport();
         String departure = flight.getDepartureAirport();
-        if (flightMap.containsKey(departure) && flightMap.containsValue(destination) == true) {
+        if (flightMap.containsKey(departure) == true) {
             System.out.println("Your airport is on flight schedule.");
         } else {
             throw new RouteNotFoundException("Your airport is not on flight schedule. Choose another airport, please.");
@@ -23,7 +23,7 @@ public class FlightFinder {
     public static void main(String args[]) {
         FlightFinder flightFinder = new FlightFinder();
         try {
-            flightFinder.findFlight(new Flight("Opole", "Krakow"));
+            flightFinder.findFlight(new Flight("Gdansk", "Krakow"));
         } catch (RouteNotFoundException e) {
             System.out.println("Error. Wrong airport." + e);
         }
