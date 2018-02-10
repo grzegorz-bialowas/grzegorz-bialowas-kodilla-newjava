@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.Basic;
+package com.kodilla.good.patterns.challenges.onlineShop.basic;
 
 public class OrderDto {
     private Customer customer;
