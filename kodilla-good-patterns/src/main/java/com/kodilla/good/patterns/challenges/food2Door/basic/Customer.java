@@ -4,12 +4,12 @@ public class Customer {
     private String name;
     private String surname;
     private String phoneNumber;
-    private String adress;
-    public Customer(String name, String surname, String phoneNumber, String adress) {
+    private String address;
+    public Customer(String name, String surname, String phoneNumber, String address) {
         this.name = name;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
-        this.adress = adress;
+        this.address = address;
     }
     public String getName() {
         return name;
@@ -20,8 +20,8 @@ public class Customer {
     public String getPhoneNumber() {
         return phoneNumber;
     }
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
     @Override
     public String toString() {
