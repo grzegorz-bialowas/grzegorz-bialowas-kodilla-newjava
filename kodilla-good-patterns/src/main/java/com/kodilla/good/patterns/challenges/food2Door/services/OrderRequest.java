@@ -1,21 +1,21 @@
 package com.kodilla.good.patterns.challenges.food2Door.services;
 
-import com.kodilla.good.patterns.challenges.food2Door.basic.Deliverer;
+import com.kodilla.good.patterns.challenges.food2Door.basic.Customer;
 import com.kodilla.good.patterns.challenges.food2Door.basic.Product;
 
 public class OrderRequest {
-    private final Deliverer deliverer;
+    private final Customer customer;
     private final Product product;
     private final int productQuantity;
     private boolean orderConfrmation;
-    public OrderRequest(Deliverer deliverer, Product product, int productQuantity, boolean orderConfrmation) {
-        this.deliverer = deliverer;
+    public OrderRequest(Customer customer, Product product, int productQuantity, boolean orderConfrmation) {
+        this.customer = customer;
         this.product = product;
         this.productQuantity = productQuantity;
         this.orderConfrmation = orderConfrmation;
     }
-    public Deliverer getDeliverer() {
-        return deliverer;
+    public Customer getCustomer() {
+        return customer;
     }
     public Product getProduct() {
         return product;
@@ -23,7 +23,7 @@ public class OrderRequest {
     public int getProductQuantity() {
         return productQuantity;
     }
-    public boolean getOrderConfirmation() {
+    public boolean isOrderConfrmation() {
         return orderConfrmation;
     }
 }
