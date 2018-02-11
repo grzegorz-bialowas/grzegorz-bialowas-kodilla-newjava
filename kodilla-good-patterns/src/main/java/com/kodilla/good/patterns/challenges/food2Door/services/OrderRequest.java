@@ -4,16 +4,21 @@ import com.kodilla.good.patterns.challenges.food2Door.basic.Customer;
 import com.kodilla.good.patterns.challenges.food2Door.basic.Product;
 
 public class OrderRequest {
+  //  private final Deliverer deliverer;
     private final Customer customer;
     private final Product product;
     private final int productQuantity;
-    private boolean orderConfrmation;
-    public OrderRequest(Customer customer, Product product, int productQuantity, boolean orderConfrmation) {
+    private boolean orderConfirmation;
+    public OrderRequest(Customer customer, Product product, int productQuantity, boolean orderConfirmation) {
+  //      this.deliverer = deliverer;
         this.customer = customer;
         this.product = product;
         this.productQuantity = productQuantity;
-        this.orderConfrmation = orderConfrmation;
+        this.orderConfirmation = orderConfirmation;
     }
+   // public Deliverer getDeliverer() {
+    //    return deliverer;
+  //  }
     public Customer getCustomer() {
         return customer;
     }
@@ -23,7 +28,7 @@ public class OrderRequest {
     public int getProductQuantity() {
         return productQuantity;
     }
-    public boolean isOrderConfrmation() {
-        return orderConfrmation;
+    public boolean getOrderConfirmation() {
+        return orderConfirmation;
     }
 }

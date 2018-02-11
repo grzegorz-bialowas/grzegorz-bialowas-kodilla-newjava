@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.challenges.food2Door.deliverers;
 
 import com.kodilla.good.patterns.challenges.food2Door.basic.Deliverer;
 import com.kodilla.good.patterns.challenges.food2Door.basic.Product;
-import com.kodilla.good.patterns.challenges.food2Door.services.DelivererProcessor;
+import com.kodilla.good.patterns.challenges.food2Door.interfaces.DelivererProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
