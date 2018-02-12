@@ -1,21 +1,14 @@
 package com.kodilla.good.patterns.challenges.food2Door.deliverers;
 
-import com.kodilla.good.patterns.challenges.food2Door.basic.Deliverer;
 import com.kodilla.good.patterns.challenges.food2Door.basic.Product;
-import com.kodilla.good.patterns.challenges.food2Door.interfaces.DelivererProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GlutenFreeShop implements DelivererProcessor {
-    private final Deliverer deliverer;
+public class GlutenFreeShop {
     private final List<Product> productList;
-    public GlutenFreeShop(Deliverer deliverer, List<Product> productList) {
-        this.deliverer = deliverer;
+    public GlutenFreeShop(List<Product> productList) {
         this.productList = productList;
-    }
-    public Deliverer getDeliverer() {
-        return deliverer;
     }
     public List<Product> getProductList() {
         List<Product> glutenFreeShopList = new ArrayList<>();
@@ -25,8 +18,5 @@ public class GlutenFreeShop implements DelivererProcessor {
         glutenFreeShopList.add(new Product("WindyCookies", 6, 1));
         glutenFreeShopList.add(new Product("DanishFlour", 9, 2));
         return productList;
-    }
-    @Override
-    public void process(Deliverer deliverer) {
     }
 }

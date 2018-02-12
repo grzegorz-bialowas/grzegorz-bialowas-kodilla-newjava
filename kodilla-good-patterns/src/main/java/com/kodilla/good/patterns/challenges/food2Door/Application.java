@@ -2,8 +2,6 @@ package com.kodilla.good.patterns.challenges.food2Door;
 import com.kodilla.good.patterns.challenges.food2Door.basic.Customer;
 import com.kodilla.good.patterns.challenges.food2Door.basic.Deliverer;
 import com.kodilla.good.patterns.challenges.food2Door.basic.Product;
-import com.kodilla.good.patterns.challenges.food2Door.deliverers.GlutenFreeShop;
-import com.kodilla.good.patterns.challenges.food2Door.interfaces.DelivererProcessor;
 import com.kodilla.good.patterns.challenges.food2Door.services.OrderRequest;
 import com.kodilla.good.patterns.challenges.food2Door.services.OrderRequestProcessor;
 
@@ -19,10 +17,12 @@ public class Application {
             glutenFreeShopList.add(new Product("BioDonut", 3, 1));
             glutenFreeShopList.add(new Product("WindyCookies", 6, 1));
             glutenFreeShopList.add(new Product("DanishFlour", 9, 2));
-        DelivererProcessor delivererProcessor = new GlutenFreeShop(deliverer, glutenFreeShopList);
-        delivererProcessor.process(deliverer);
-        OrderRequest orderRequest = new OrderRequest(customer, glutenFreeShopList.get(2), 2, true);
-        OrderRequestProcessor orderRequestProcessor = new OrderRequestProcessor(delivererProcessor,deliverer);
+        List<Deliverer> delivererList = new ArrayList<>();
+        delivererList.add(new Deliverer("ExtraFoodShop", "Warsaw", 123, "aaaaa@aaa.pl"));
+        delivererList.add(new Deliverer("GlutenFreeShop", "Krakow", 456, "zzz@zz.pl"));
+        delivererList.add(new Deliverer("HealthyShop", "Wroclaw", 789, "xxx@xxx.pl"));
+        OrderRequest orderRequest = new OrderRequest(deliverer,customer, glutenFreeShopList, 2, true);
+        OrderRequestProcessor orderRequestProcessor = new OrderRequestProcessor(n -> deliverer);
         orderRequestProcessor.order(orderRequest);
     }
 }

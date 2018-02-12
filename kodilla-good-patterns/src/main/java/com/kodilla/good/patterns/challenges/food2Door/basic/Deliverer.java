@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges.food2Door.basic;
 
+import java.util.Objects;
+
 public class Deliverer {
     private String name;
     private String address;
@@ -23,5 +25,28 @@ public class Deliverer {
     public String getEmail() {
         return email;
     }
+    @Override
+    public String toString() {
+        return "Deliverer{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Deliverer)) return false;
+        Deliverer deliverer = (Deliverer) o;
+        return getPhoneNumber() == deliverer.getPhoneNumber() &&
+                Objects.equals(getName(), deliverer.getName()) &&
+                Objects.equals(getAddress(), deliverer.getAddress()) &&
+                Objects.equals(getEmail(), deliverer.getEmail());
+    }
+    @Override
+    public int hashCode() {
 
+        return Objects.hash(getName(), getAddress(), getPhoneNumber(), getEmail());
+    }
 }
