@@ -149,8 +149,5 @@ public class BoardTestSuite {
                 .getAsDouble();
         //Then
         Assert.assertEquals(10,longTasks,0.1);
-
-
-
     }
 }
