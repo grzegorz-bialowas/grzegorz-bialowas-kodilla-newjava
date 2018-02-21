@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Scope;
 public class BoardConfig {
     @Bean
     public Board getBoard() {
-        return new Board(getBoard().getToDoList(), getBoard().getInProgressList(),getBoard().getDoneList());
+        return new Board(getToDoList(), getInProgressList(),getDoneList());
     }
     @Bean
     @Scope("prototype")
