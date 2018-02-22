@@ -11,6 +11,6 @@ public class LoggerTestSuite {
         //When
         String log = Logger.getInstance().getLastLog();
         //Then
-        Assert.assertEquals("log", log);
+        Assert.assertEquals("today", log);
     }
 }

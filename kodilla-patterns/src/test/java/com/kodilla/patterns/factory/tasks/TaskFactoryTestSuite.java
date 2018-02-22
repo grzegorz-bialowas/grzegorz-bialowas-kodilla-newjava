@@ -13,7 +13,7 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("Driving task has been executed", drivingTask.executeTask());
         Assert.assertEquals("Reverse", drivingTask.getTaskName());
-        Assert.assertTrue("Driving test has been executed", drivingTask.isTaskExecuted());
+        Assert.assertTrue("Driving task has been executed", drivingTask.isTaskExecuted());
     }
     @Test
     public void testPaintingTask() {
