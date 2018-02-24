@@ -19,17 +19,15 @@ public class FlightsSercher {
                 .filter(flight -> flight.getDepartureCity().equals(departureCity) && flight.getArrivalCity().equals(arrivalCity))
                 .collect(Collectors.toList());
     }
-    public static List<Flight> flightWithTransfer(City departureCity, City arrivalCity) {
+    public static List<City> flightWithTransfer(City departureCity, City arrivalCity) {
                 List<Flight> transferFly = FlightsSercher.flightsFromCity(departureCity);
-                transferFly.stream()
-                        .filter(flight -> flight.getDepartureCity().equals(arrivalCity))
+                List<City> aaa = transferFly.stream()
+                        .map(flight -> flight.getArrivalCity())
                         .collect(Collectors.toList());
-                return transferFly.stream()
-                        .filter(flight -> flight.getDepartureCity().equals(departureCity))
+                List<Flight> zzzz = FlightsSercher.flightsToCity(arrivalCity);
+                return zzzz.stream()
+                        .filter(flight -> aaa.contains(flight.getDepartureCity()))
+                        .map(flight -> flight.getDepartureCity())
                         .collect(Collectors.toList());
-
-
-
     }
-
 }
