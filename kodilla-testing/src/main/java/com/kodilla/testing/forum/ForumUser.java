@@ -21,11 +21,9 @@ public class ForumUser {
         comments.add(theComment);
     }
     public int getPostQuantity() {
-        // return 100 temporarily
-        return 100;
+        return post.size();
     }
     public int getCommentsQuantity() {
-        // return 100 temporarily
         return comments.size();
     }
     public ForumPost getPost(int postNumber) {
