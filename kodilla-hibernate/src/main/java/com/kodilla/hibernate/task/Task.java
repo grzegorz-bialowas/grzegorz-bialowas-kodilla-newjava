@@ -10,6 +10,8 @@ public class Task {
     private String description;
     private Date created;
     private int duration;
+    public Task() {
+    }
     public Task(String description, int duration) {
         this.description = description;
         this.created = new Date();
@@ -26,6 +28,8 @@ public class Task {
     public String getDescription() {
         return description;
     }
+    @NotNull
+    @Column(name="CREATED")
     public Date getCreated() {
         return created;
     }
