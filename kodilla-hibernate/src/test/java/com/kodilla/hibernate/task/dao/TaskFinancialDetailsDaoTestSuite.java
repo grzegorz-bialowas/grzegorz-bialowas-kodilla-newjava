@@ -2,7 +2,7 @@ package com.kodilla.hibernate.task.dao;
 
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import org.junit.Assert;
-import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +16,7 @@ import java.util.List;
 public class TaskFinancialDetailsDaoTestSuite {
     @Autowired
     TaskFinancialDetailsDao taskFinancialDetailsDao;
-    @Ignore
+    @Test
     public void testFindByPaid() {
         //Given
         TaskFinancialDetails taskFinancialDetails =
@@ -28,6 +28,6 @@ public class TaskFinancialDetailsDaoTestSuite {
         //Then
         Assert.assertEquals(1, resultList.size());
         //CleanUp
-       // taskFinancialDetailsDao.delete(id);
+        taskFinancialDetailsDao.delete(id);
     }
 }

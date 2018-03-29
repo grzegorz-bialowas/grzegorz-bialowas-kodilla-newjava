@@ -3,7 +3,6 @@ package com.kodilla.hibernate.task.dao;
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class TaskDaoTestSuite {
         //CleanUp
         taskDao.delete(id);
     }
-    @Ignore
+    @Test
     public void testTaskDaoFindByDuration() {
         //Given
         Task task = new Task(DESCRIPTION, 7);
@@ -43,13 +42,13 @@ public class TaskDaoTestSuite {
         List<Task> readTasks = taskDao.findByDuration(duration);
 
         //Then
-        Assert.assertEquals(1, readTasks.size());
+         Assert.assertEquals(1, readTasks.size());
 
         //CleanUp
-        //int id = readTasks.get(0).getId();
-        //taskDao.delete(id);
+        int id = readTasks.get(0).getId();
+        taskDao.delete(id);
     }
-    @Ignore
+    @Test
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
         Task task = new Task(DESCRIPTION, 30);
@@ -60,6 +59,6 @@ public class TaskDaoTestSuite {
         //Then
         Assert.assertNotEquals(0, id);
         //CleanUp
-        //taskDao.delete(id);
+        taskDao.delete(id);
     }
 }

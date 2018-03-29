@@ -4,7 +4,7 @@ import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.tasklist.TaskList;
 import org.junit.Assert;
-import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +18,7 @@ public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
     private static final String LISTNAME = "Hello, That's your list.";
-    @Ignore
+    @Test
     public void testFindByListName() {
         //Given
         TaskList taskList = new TaskList("Book List" , "My new library");
@@ -29,9 +29,9 @@ public class TaskListDaoTestSuite {
         TaskList readTaskList = taskListDao.findOne(id);
         Assert.assertEquals(id, readTaskList.getId());
         //CleanUp
-        //taskListDao.delete(id);
+        taskListDao.delete(id);
     }
-    @Ignore
+    @Test
     public void testTaskListDaoSaveWithTasks() {
         //Given
         Task task = new Task("Test: Learn Hibernate", 14);
@@ -49,9 +49,8 @@ public class TaskListDaoTestSuite {
         taskListDao.save(taskList);
         int id = taskList.getId();
         //Then
-        Assert.assertNotEquals(0, id);
+     //   Assert.assertNotEquals(0, id);
         //CleanUp
-        //taskListDao.delete(id);
+      //  taskListDao.delete(id);
     }
-
 }
