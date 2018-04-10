@@ -33,7 +33,7 @@ public class Invoice {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
         )
-    public List<Item> getItems(Item item) {
+    public List<Item> getItems() {
         return items;
     }
     public void setId(int id) {

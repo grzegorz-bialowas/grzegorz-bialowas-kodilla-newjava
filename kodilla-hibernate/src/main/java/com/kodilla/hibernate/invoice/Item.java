@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 @Entity
-//@Table(name = "ITEM")
+@Table(name = "ITEM")
 public class Item {
     private int id;
     private Product product;
@@ -14,9 +14,11 @@ public class Item {
     private Invoice invoice;
     public Item() {
     }
-    public Item(BigDecimal price, int quantity) {
+    public Item(Product product, BigDecimal price, int quantity, BigDecimal value) {
         this.price = price;
         this.quantity = quantity;
+        this.product = product;
+        this.value = value;
     }
     @Id
     @GeneratedValue
